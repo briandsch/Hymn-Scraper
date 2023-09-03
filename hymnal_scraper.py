@@ -1,7 +1,7 @@
-# Loop through groups of hymns +
-    # Loop through the list of hymns +
-        # Scrape the text into a string variable and edit the text +
-        # Save the text into a txt file, naming it after the hymn name contained in the list +
+# Loop through groups of hymns
+    # Loop through the list of hymns
+        # Scrape the text into a string variable and edit the text
+        # Save the text into a txt file, naming it after the hymn name contained in the list
 
 import os
 import requests
@@ -23,6 +23,7 @@ for group in groupsList:
     listRequest = requests.get(listURL)
     soupList = bs(listRequest.content, "html.parser")
     listHymns = list(soupList.find_all("h2", class_="post__title"))
+    
     # Loop through the list of hymns
     for hymn in listHymns:
         hymnStr = str(hymn)
@@ -38,7 +39,7 @@ for group in groupsList:
             .replace('|', '') \
             .replace('–', '-')
 
-        # Scrape the text into a string variable and edit the text *
+        # Scrape the text into a string variable and edit the text
         hymnRequest = requests.get(hymnURL)
         soupHymn = bs(hymnRequest.content, "html.parser")
         lyrics = str(soupHymn.find("div", {"class" : "lyrics"}).text)
@@ -58,7 +59,7 @@ for group in groupsList:
         lyrics = "[Blank]\n" + lyrics
         lyrics = lyrics + "\n\n[Blank]\n"
         
-        # Save the text into a txt file, naming it after the hymn name contained in the list *
+        # Save the text into a txt file, naming it after the hymn name contained in the list
         with open(os.path.dirname(__file__) + "\\hymn_notepads\\" + hymnName + ".txt", "wt", encoding="utf-8") as hymnFile:
             hymnFile.write(lyrics)
         print(hymnName)
