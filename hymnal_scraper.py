@@ -3,8 +3,6 @@
         # Scrape the text into a string variable and edit the text +
         # Save the text into a txt file, naming it after the hymn name contained in the list +
 
-
-
 import os
 import requests
 from bs4 import BeautifulSoup as bs
@@ -60,8 +58,7 @@ for group in groupsList:
         lyrics = "[Blank]\n" + lyrics
         lyrics = lyrics + "\n\n[Blank]\n"
         
-
         # Save the text into a txt file, naming it after the hymn name contained in the list *
         with open(os.path.dirname(__file__) + "\\hymn_notepads\\" + hymnName + ".txt", "wt", encoding="utf-8") as hymnFile:
             hymnFile.write(lyrics)
-        print(hymnName, "has been scraped.")
+        print(hymnName)
