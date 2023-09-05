@@ -53,9 +53,9 @@ for group in groupsList:
             .replace("Verse 4", "\n[Verse 4]") \
             .replace("Verse 5", "\n[Verse 5]") \
             .replace("Verse 6", "\n[Verse 6]") \
-            .replace("Verse 6", "\n[Verse 7]") \
-            .replace("Verse 6", "\n[Verse 8]") \
-            .replace("Verse 6", "\n[Verse 9]")
+            .replace("Verse 7", "\n[Verse 7]") \
+            .replace("Verse 8", "\n[Verse 8]") \
+            .replace("Verse 9", "\n[Verse 9]")
         lyrics = "[Blank]\n" + lyrics
         lyrics = lyrics + "\n\n[Blank]\n"
         
