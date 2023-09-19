@@ -57,7 +57,7 @@ for group in groupsList:
             .replace("Verse 8", "\n[Verse 8]") \
             .replace("Verse 9", "\n[Verse 9]")
         lyrics = "[Blank]\n" + lyrics
-        lyrics= lyrics + "\n\n[Blank]\n"
+        lyrics = lyrics + "\n\n[Blank]\n"
         
         # Save the text into a txt file, naming it after the hymn name contained in the list
         with open(os.path.dirname(__file__) + "\\hymn_notepads\\" + hymnName + ".txt", "wt", encoding="utf-8") as hymnFile:
